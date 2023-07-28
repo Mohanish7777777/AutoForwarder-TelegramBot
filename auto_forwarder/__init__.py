@@ -15,19 +15,19 @@ LOGGER = logging.getLogger(__name__)
 ENV = bool(os.environ.get('ENV', False))
 
 if ENV:
-    API_KEY = os.environ.get('API_KEY', None)
+    API_KEY = os.environ.get('API_KEY', 6118269542:AAFmgpviq2esTYYpdaGTc3Ch1RQntbcOAcs)
     try:
-        OWNER_ID = int(os.environ.get('OWNER_ID', None))
+        OWNER_ID = int(os.environ.get('OWNER_ID', 5572938538))
     except ValueError:
         raise Exception("Your OWNER_ID env variable is not a valid integer.")
 
     try:
-        FROM_CHATS = set(int(x) for x in os.environ.get("FROM_CHATS", "").split())
+        FROM_CHATS = set(int(x) for x in os.environ.get("FROM_CHATS", "-1001979981629").split())
     except ValueError:
         raise Exception("Your FROM_CHATS list does not contain valid integers.")
 
     try:
-        TO_CHATS = set(int(x) for x in os.environ.get("TO_CHATS", "").split())
+        TO_CHATS = set(int(x) for x in os.environ.get("TO_CHATS", "-1001681811624").split())
     except ValueError:
         raise Exception("Your TO_CHATS list does not contain valid integers.")
 
