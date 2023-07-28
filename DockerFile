@@ -1,0 +1,11 @@
+# Use the official Python image as the base image
+FROM python:3
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the auto_forwarder module and any other required files to the container
+COPY auto_forwarder /app/auto_forwarder
+
+# Run the command python3 -m auto_forwarder when the container starts
+CMD ["python3", "-m", "auto_forwarder"]
